@@ -22,262 +22,96 @@
       --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
     }
 
-    body {
-      font-family: var(--font);
-      background: var(--white);
-      color: var(--text);
-      line-height: 1.5;
-    }
+    body { font-family: var(--font); background: var(--white); color: var(--text); line-height: 1.5; }
 
-    header {
-      border-bottom: 1px solid #ebebeb;
-      padding: 20px 24px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .logo-dot {
-      width: 32px; height: 32px;
-      background: var(--red);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-    }
+    header { border-bottom: 1px solid #ebebeb; padding: 20px 24px; display: flex; align-items: center; gap: 8px; }
+    .logo-dot { width: 32px; height: 32px; background: var(--red); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
     .logo-dot svg { width: 18px; height: 18px; fill: #fff; }
-    header span {
-      font-size: 18px;
-      font-weight: 600;
-      color: var(--red);
-      letter-spacing: -0.18px;
-    }
+    header span { font-size: 18px; font-weight: 600; color: var(--red); letter-spacing: -0.18px; }
 
-    .hero {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 72px 24px 48px;
-      text-align: center;
-    }
-    .hero-badge {
-      display: inline-block;
-      background: var(--surface);
-      color: var(--secondary);
-      font-size: 12px;
-      font-weight: 600;
-      padding: 4px 14px;
-      border-radius: 14px;
-      margin-bottom: 20px;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-    .hero h1 {
-      font-size: clamp(28px, 5vw, 40px);
-      font-weight: 700;
-      letter-spacing: -0.44px;
-      line-height: 1.2;
-      margin-bottom: 16px;
-    }
+    .hero { max-width: 720px; margin: 0 auto; padding: 72px 24px 48px; text-align: center; }
+    .hero-badge { display: inline-block; background: var(--surface); color: var(--secondary); font-size: 12px; font-weight: 600; padding: 4px 14px; border-radius: 14px; margin-bottom: 20px; letter-spacing: 0.04em; text-transform: uppercase; }
+    .hero h1 { font-size: clamp(28px, 5vw, 40px); font-weight: 700; letter-spacing: -0.44px; line-height: 1.2; margin-bottom: 16px; }
     .hero h1 span { color: var(--red); }
-    .hero p {
-      font-size: 16px;
-      color: var(--secondary);
-      max-width: 480px;
-      margin: 0 auto;
-      font-weight: 500;
-    }
+    .hero p { font-size: 16px; color: var(--secondary); max-width: 480px; margin: 0 auto; font-weight: 500; }
 
-    .section {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 0 24px 80px;
-    }
-    .section-title {
-      font-size: 22px;
-      font-weight: 700;
-      letter-spacing: -0.44px;
-      margin-bottom: 4px;
-    }
-    .section-sub {
-      font-size: 14px;
-      color: var(--secondary);
-      margin-bottom: 28px;
-      font-weight: 500;
-    }
+    .prereq-wrap { background: #f7f7f7; padding: 56px 24px; }
+    .prereq-inner { max-width: 720px; margin: 0 auto; }
+    .prereq-badge { display: inline-block; background: var(--red); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 12px; border-radius: 14px; margin-bottom: 16px; }
+    .prereq-title { font-size: clamp(20px, 4vw, 26px); font-weight: 700; letter-spacing: -0.44px; line-height: 1.25; margin-bottom: 8px; }
+    .prereq-sub { font-size: 14px; color: var(--secondary); margin-bottom: 28px; font-weight: 500; }
+    .prereq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+    .prereq-card { background: var(--white); border-radius: 20px; padding: 24px; box-shadow: var(--shadow-card); display: flex; gap: 16px; align-items: flex-start; }
+    .prereq-num { flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: var(--red); color: #fff; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .prereq-body h3 { font-size: 16px; font-weight: 600; margin-bottom: 6px; letter-spacing: -0.18px; }
+    .prereq-body > p { font-size: 13px; color: var(--secondary); margin-bottom: 14px; line-height: 1.55; }
+    .prereq-body a { color: var(--red); }
+    .agent-list { display: flex; flex-direction: column; gap: 10px; }
+    .agent-row { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; }
+    .agent-tag { flex-shrink: 0; font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 14px; margin-top: 1px; white-space: nowrap; }
+    .tag-gpt    { background: #e8f5e9; color: #2e7d32; }
+    .tag-claude { background: #fff3e0; color: #e65100; }
+    .tag-free   { background: #e3f2fd; color: #1565c0; }
+    .agent-row strong { display: block; font-weight: 600; color: var(--text); }
+    .agent-link { display: inline-block; font-size: 12px; color: var(--red); text-decoration: none; margin-top: 1px; }
+    .agent-link:hover { text-decoration: underline; }
 
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
-      margin-bottom: 56px;
-    }
-    .step-card {
-      background: var(--white);
-      border-radius: 20px;
-      padding: 24px;
-      box-shadow: var(--shadow-card);
-      transition: box-shadow 0.2s;
-    }
+    .section { max-width: 720px; margin: 0 auto; padding: 0 24px 80px; }
+    .section-title { font-size: 22px; font-weight: 700; letter-spacing: -0.44px; margin-bottom: 4px; }
+    .section-sub { font-size: 14px; color: var(--secondary); margin-bottom: 28px; font-weight: 500; }
+
+    .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 56px; }
+    .step-card { background: var(--white); border-radius: 20px; padding: 24px; box-shadow: var(--shadow-card); transition: box-shadow 0.2s; }
     .step-card:hover { box-shadow: var(--shadow-hover); }
-    .step-num {
-      width: 36px; height: 36px;
-      border-radius: 50%;
-      background: var(--red);
-      color: #fff;
-      font-size: 14px;
-      font-weight: 700;
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 14px;
-    }
-    .step-card h3 {
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 6px;
-      letter-spacing: -0.18px;
-    }
-    .step-card p {
-      font-size: 13px;
-      color: var(--secondary);
-      font-weight: 400;
-      line-height: 1.5;
-    }
+    .step-num { width: 36px; height: 36px; border-radius: 50%; background: var(--red); color: #fff; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+    .step-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 6px; letter-spacing: -0.18px; }
+    .step-card p { font-size: 13px; color: var(--secondary); font-weight: 400; line-height: 1.5; }
 
-    .divider {
-      border: none;
-      border-top: 1px solid #ebebeb;
-      margin: 0 auto 56px;
-      max-width: 720px;
-    }
+    .divider { border: none; border-top: 1px solid #ebebeb; margin: 0 auto 56px; max-width: 720px; }
 
-    .detail-step {
-      display: flex;
-      gap: 20px;
-      margin-bottom: 36px;
-    }
+    .detail-step { display: flex; gap: 20px; margin-bottom: 36px; }
     .detail-step:last-child { margin-bottom: 0; }
-    .detail-num {
-      flex-shrink: 0;
-      width: 28px; height: 28px;
-      border-radius: 50%;
-      border: 2px solid var(--border);
-      color: var(--secondary);
-      font-size: 12px;
-      font-weight: 700;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .detail-body h3 {
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 6px;
-      letter-spacing: -0.18px;
-    }
-    .detail-body p {
-      font-size: 14px;
-      color: var(--secondary);
-      margin-bottom: 10px;
-      line-height: 1.6;
-    }
+    .detail-num { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--border); color: var(--secondary); font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .detail-body h3 { font-size: 16px; font-weight: 600; margin-bottom: 6px; letter-spacing: -0.18px; }
+    .detail-body p { font-size: 14px; color: var(--secondary); margin-bottom: 10px; line-height: 1.6; }
 
-    .callout {
-      background: #fff8f9;
-      border: 1px solid #ffd0d8;
-      border-radius: 14px;
-      padding: 14px 18px;
-      font-size: 13px;
-      color: var(--text);
-      line-height: 1.55;
-      margin-top: 10px;
-    }
+    .callout { background: #fff8f9; border: 1px solid #ffd0d8; border-radius: 14px; padding: 14px 18px; font-size: 13px; color: var(--text); line-height: 1.55; margin-top: 10px; }
     .callout strong { color: var(--red); font-weight: 600; }
 
-    .code-block {
-      background: #f7f7f7;
-      border: 1px solid #ebebeb;
-      border-radius: 8px;
-      padding: 14px 16px;
-      font-family: 'SF Mono', 'Fira Code', monospace;
-      font-size: 13px;
-      color: #3f3f3f;
-      margin-top: 10px;
-      overflow-x: auto;
-      white-space: pre;
-    }
+    .code-block { background: #f7f7f7; border: 1px solid #ebebeb; border-radius: 8px; padding: 14px 16px; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 13px; color: #3f3f3f; margin-top: 10px; overflow-x: auto; white-space: pre; }
     .code-comment { color: #929292; }
 
     .tool-list { margin-top: 10px; }
-    .tool-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      padding: 14px 0;
-      border-bottom: 1px solid #ebebeb;
-    }
+    .tool-row { display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px solid #ebebeb; }
     .tool-row:last-child { border-bottom: none; }
-    .tool-badge {
-      flex-shrink: 0;
-      font-size: 11px;
-      font-weight: 600;
-      padding: 3px 10px;
-      border-radius: 14px;
-      min-width: 64px;
-      text-align: center;
-    }
-    .badge-easy   { background: #e8faf0; color: #16a34a; }
-    .badge-mid    { background: #fff7ed; color: #d97706; }
-    .badge-hard   { background: #fef2f2; color: #c13515; }
+    .tool-badge { flex-shrink: 0; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 14px; min-width: 64px; text-align: center; }
+    .badge-easy { background: #e8faf0; color: #16a34a; }
+    .badge-mid  { background: #fff7ed; color: #d97706; }
+    .badge-hard { background: #fef2f2; color: #c13515; }
     .tool-row div p { font-size: 14px; font-weight: 600; margin-bottom: 2px; }
     .tool-row div span { font-size: 13px; color: var(--secondary); }
 
-    .cta-wrap {
-      text-align: center;
-      padding: 56px 24px;
-      background: #fff8f9;
-      border-radius: 32px;
-      margin: 0 auto 80px;
-      max-width: 720px;
-    }
-    .cta-wrap h2 {
-      font-size: 22px;
-      font-weight: 700;
-      letter-spacing: -0.44px;
-      margin-bottom: 8px;
-    }
-    .cta-wrap p {
-      font-size: 14px;
-      color: var(--secondary);
-      margin-bottom: 24px;
-    }
-    .btn {
-      display: inline-block;
-      background: var(--red);
-      color: #fff;
-      font-size: 16px;
-      font-weight: 500;
-      padding: 14px 28px;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background 0.15s;
-    }
+    .cta-wrap { text-align: center; padding: 56px 24px; background: #fff8f9; border-radius: 32px; margin: 0 auto 80px; max-width: 720px; }
+    .cta-wrap h2 { font-size: 22px; font-weight: 700; letter-spacing: -0.44px; margin-bottom: 8px; }
+    .cta-wrap p { font-size: 14px; color: var(--secondary); margin-bottom: 24px; }
+    .btn { display: inline-block; background: var(--red); color: #fff; font-size: 16px; font-weight: 500; padding: 14px 28px; border-radius: 8px; text-decoration: none; transition: background 0.15s; }
     .btn:hover { background: var(--red-dark); }
 
-    footer {
-      border-top: 1px solid #ebebeb;
-      padding: 24px;
-      text-align: center;
-      font-size: 13px;
-      color: var(--secondary);
-    }
+    footer { border-top: 1px solid #ebebeb; padding: 24px; text-align: center; font-size: 13px; color: var(--secondary); }
 
     @media (max-width: 600px) {
       .hero { padding: 48px 20px 36px; }
       .steps-grid { grid-template-columns: 1fr; }
       .detail-step { flex-direction: column; gap: 8px; }
+      .prereq-grid { grid-template-columns: 1fr; }
+      .prereq-card { flex-direction: column; gap: 10px; }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <div class="logo-dot">
-    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
-  </div>
+  <div class="logo-dot"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg></div>
   <span>웹페이지 만들기 가이드</span>
 </header>
 
@@ -287,25 +121,51 @@
   <p>코딩 경험 없어도 괜찮습니다. 세 단계로 내 웹페이지 주소를 만드세요.</p>
 </div>
 
-<div class="section">
+<div class="prereq-wrap">
+  <div class="prereq-inner">
+    <div class="prereq-badge">먼저 이것만 준비하세요</div>
+    <h2 class="prereq-title">3단계가 어렵게 느껴진다면?<br>딱 두 가지만 갖춰오면 됩니다</h2>
+    <p class="prereq-sub">아래 두 가지를 완료한 뒤 다시 이 가이드로 돌아오세요.</p>
+    <div class="prereq-grid">
+      <div class="prereq-card">
+        <div class="prereq-num">1</div>
+        <div class="prereq-body">
+          <h3>GitHub 계정 만들기</h3>
+          <p><a href="https://github.com" target="_blank">github.com</a>에 접속해서 회원가입(Sign up)을 완료하고 옵니다. 이메일 인증까지 끝내야 합니다.</p>
+        </div>
+      </div>
+      <div class="prereq-card">
+        <div class="prereq-num">2</div>
+        <div class="prereq-body">
+          <h3>코딩 에이전트 설치하기</h3>
+          <p>지금 쓰는 AI 서비스에 맞는 도구를 하나 골라 설치 + 로그인까지 완료하고 옵니다.</p>
+          <div class="agent-list">
+            <div class="agent-row">
+              <span class="agent-tag tag-gpt">ChatGPT 사용자</span>
+              <div><strong>OpenAI Codex</strong> 다운로드<a class="agent-link" href="https://openai.com/codex" target="_blank">→ openai.com/codex</a></div>
+            </div>
+            <div class="agent-row">
+              <span class="agent-tag tag-claude">Claude 사용자</span>
+              <div><strong>Claude Code Desktop</strong> 다운로드<a class="agent-link" href="https://claude.ai/download" target="_blank">→ claude.ai/download</a></div>
+            </div>
+            <div class="agent-row">
+              <span class="agent-tag tag-free">무료로 시작</span>
+              <div><strong>Google Antigravity</strong> 다운로드 (개인 무료)<a class="agent-link" href="https://antigravity.google" target="_blank">→ antigravity.google</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="padding-top:56px;">
   <p class="section-title">한눈에 보는 3단계</p>
   <p class="section-sub">결론부터 — 이 세 가지가 전부입니다.</p>
   <div class="steps-grid">
-    <div class="step-card">
-      <div class="step-num">1</div>
-      <h3>HTML 파일 만들기</h3>
-      <p>내 내용을 담은 <code>.html</code> 파일 하나를 준비합니다. AI가 대신 만들어 줍니다.</p>
-    </div>
-    <div class="step-card">
-      <div class="step-num">2</div>
-      <h3>GitHub에 올리기</h3>
-      <p>GitHub 계정을 만들고, 파일을 저장소(repository)에 업로드합니다.</p>
-    </div>
-    <div class="step-card">
-      <div class="step-num">3</div>
-      <h3>GitHub Pages 켜기</h3>
-      <p>설정 한 번으로 <code>아이디.github.io/이름</code> 주소가 자동 생성됩니다.</p>
-    </div>
+    <div class="step-card"><div class="step-num">1</div><h3>HTML 파일 만들기</h3><p>내 내용을 담은 <code>.html</code> 파일 하나를 준비합니다. AI가 대신 만들어 줍니다.</p></div>
+    <div class="step-card"><div class="step-num">2</div><h3>GitHub에 올리기</h3><p>GitHub 계정을 만들고, 파일을 저장소(repository)에 업로드합니다.</p></div>
+    <div class="step-card"><div class="step-num">3</div><h3>GitHub Pages 켜기</h3><p>설정 한 번으로 <code>아이디.github.io/이름</code> 주소가 자동 생성됩니다.</p></div>
   </div>
 </div>
 
@@ -314,7 +174,6 @@
 <div class="section">
   <p class="section-title">알고 시작하면 쉬운 개념 둘</p>
   <p class="section-sub">이것만 이해하면 전체 흐름이 보입니다.</p>
-
   <div class="detail-step">
     <div class="detail-num">A</div>
     <div class="detail-body">
@@ -331,17 +190,12 @@
 &lt;/html&gt;</div>
     </div>
   </div>
-
   <div class="detail-step">
     <div class="detail-num">B</div>
     <div class="detail-body">
       <h3>GitHub Pages — 무료 서버</h3>
       <p>내 파일을 GitHub에 올려두면, GitHub가 그 파일을 전 세계 누구나 볼 수 있는 서버에 올려 줍니다. 이 서비스가 <strong>GitHub Pages</strong>입니다. 별도 서버 구입이나 월정액 없이 무료로 사용할 수 있습니다.</p>
-      <div class="callout">
-        <strong>내 주소 형태:</strong> <code>https://아이디.github.io/저장소이름</code><br>
-        예시: GitHub 아이디가 <em>kim</em>, 저장소 이름이 <em>mysite</em>라면<br>
-        → <code>https://kim.github.io/mysite</code>
-      </div>
+      <div class="callout"><strong>내 주소 형태:</strong> <code>https://아이디.github.io/저장소이름</code><br>예시: GitHub 아이디가 <em>kim</em>, 저장소 이름이 <em>mysite</em>라면<br>→ <code>https://kim.github.io/mysite</code></div>
     </div>
   </div>
 </div>
@@ -351,66 +205,16 @@
 <div class="section">
   <p class="section-title">단계별 따라하기</p>
   <p class="section-sub">순서대로 하면 처음이어도 배포까지 완료됩니다.</p>
-
-  <div class="detail-step">
-    <div class="detail-num">1</div>
-    <div class="detail-body">
-      <h3>목표와 내용 초안 정하기</h3>
-      <p>"어떤 페이지를 만들 건가요?" — 딱 한 줄로 목적을 씁니다. 참고하고 싶은 웹사이트 하나와, 올리고 싶은 내용 초안(제목·소개 문구 등)을 메모장에 적어 두세요.</p>
-    </div>
-  </div>
-
-  <div class="detail-step">
-    <div class="detail-num">2</div>
-    <div class="detail-body">
-      <h3>AI로 HTML 만들기</h3>
-      <p>ChatGPT, Claude, Gemini 중 편한 AI를 열고 이렇게 요청합니다:</p>
-      <div class="code-block"><span class="code-comment"># AI에게 보내는 프롬프트 예시</span>
+  <div class="detail-step"><div class="detail-num">1</div><div class="detail-body"><h3>목표와 내용 초안 정하기</h3><p>"어떤 페이지를 만들 건가요?" — 딱 한 줄로 목적을 씁니다. 참고하고 싶은 웹사이트 하나와, 올리고 싶은 내용 초안(제목·소개 문구 등)을 메모장에 적어 두세요.</p></div></div>
+  <div class="detail-step"><div class="detail-num">2</div><div class="detail-body"><h3>AI로 HTML 만들기</h3><p>ChatGPT, Claude, Gemini 중 편한 AI를 열고 이렇게 요청합니다:</p><div class="code-block"><span class="code-comment"># AI에게 보내는 프롬프트 예시</span>
 "[참고 사이트 주소]와 비슷한 레이아웃으로,
 아래 내용을 담은 index.html 파일을 만들어 줘.
 
-[내 내용 초안]"</div>
-      <p style="margin-top:10px;">코드를 받으면 복사 → 메모장에 붙여넣기 → <code>index.html</code>로 저장 → 브라우저로 열어 확인합니다.</p>
-      <div class="callout">
-        <strong>더 편한 방법:</strong> Claude Code 같은 코딩 에이전트를 사용하면 파일 생성부터 GitHub 업로드까지 자동으로 처리해 줍니다.
-      </div>
-    </div>
-  </div>
-
-  <div class="detail-step">
-    <div class="detail-num">3</div>
-    <div class="detail-body">
-      <h3>GitHub 계정 만들기</h3>
-      <p><a href="https://github.com" style="color:var(--red);">github.com</a> → Sign up → 이메일·비밀번호·사용자 이름 입력 후 이메일 인증까지 완료합니다. <strong>사용자 이름이 주소의 일부</strong>가 되므로 신중히 정하세요.</p>
-    </div>
-  </div>
-
-  <div class="detail-step">
-    <div class="detail-num">4</div>
-    <div class="detail-body">
-      <h3>저장소(Repository) 만들기</h3>
-      <p>GitHub 로그인 → 오른쪽 위 <strong>＋ → New repository</strong> → 이름 입력 → <strong>Public</strong> 선택 → Create repository.</p>
-      <div class="callout">
-        <strong>꼭 Public으로 설정하세요.</strong> Private이면 GitHub Pages를 무료로 사용할 수 없습니다.
-      </div>
-    </div>
-  </div>
-
-  <div class="detail-step">
-    <div class="detail-num">5</div>
-    <div class="detail-body">
-      <h3>파일 올리기</h3>
-      <p>저장소 페이지 → <strong>Add file → Upload files</strong> → <code>index.html</code> 드래그 → <strong>Commit changes</strong> 클릭.</p>
-    </div>
-  </div>
-
-  <div class="detail-step">
-    <div class="detail-num">6</div>
-    <div class="detail-body">
-      <h3>GitHub Pages 켜기</h3>
-      <p>저장소 → <strong>Settings → Pages → Source: Deploy from a branch</strong> → Branch: <code>main</code>, 폴더: <code>/ (root)</code> → <strong>Save</strong>. 1~3분 후 주소가 나타납니다.</p>
-    </div>
-  </div>
+[내 내용 초안]"</div><p style="margin-top:10px;">코드를 받으면 복사 → 메모장에 붙여넣기 → <code>index.html</code>로 저장 → 브라우저로 열어 확인합니다.</p><div class="callout"><strong>더 편한 방법:</strong> Claude Code 같은 코딩 에이전트를 사용하면 파일 생성부터 GitHub 업로드까지 자동으로 처리해 줍니다.</div></div></div>
+  <div class="detail-step"><div class="detail-num">3</div><div class="detail-body"><h3>GitHub 계정 만들기</h3><p><a href="https://github.com" style="color:var(--red);">github.com</a> → Sign up → 이메일·비밀번호·사용자 이름 입력 후 이메일 인증까지 완료합니다. <strong>사용자 이름이 주소의 일부</strong>가 되므로 신중히 정하세요.</p></div></div>
+  <div class="detail-step"><div class="detail-num">4</div><div class="detail-body"><h3>저장소(Repository) 만들기</h3><p>GitHub 로그인 → 오른쪽 위 <strong>＋ → New repository</strong> → 이름 입력 → <strong>Public</strong> 선택 → Create repository.</p><div class="callout"><strong>꼭 Public으로 설정하세요.</strong> Private이면 GitHub Pages를 무료로 사용할 수 없습니다.</div></div></div>
+  <div class="detail-step"><div class="detail-num">5</div><div class="detail-body"><h3>파일 올리기</h3><p>저장소 페이지 → <strong>Add file → Upload files</strong> → <code>index.html</code> 드래그 → <strong>Commit changes</strong> 클릭.</p></div></div>
+  <div class="detail-step"><div class="detail-num">6</div><div class="detail-body"><h3>GitHub Pages 켜기</h3><p>저장소 → <strong>Settings → Pages → Source: Deploy from a branch</strong> → Branch: <code>main</code>, 폴더: <code>/ (root)</code> → <strong>Save</strong>. 1~3분 후 주소가 나타납니다.</p></div></div>
 </div>
 
 <hr class="divider" />
@@ -419,27 +223,9 @@
   <p class="section-title">HTML 만드는 방법 비교</p>
   <p class="section-sub">상황에 맞는 방법을 고르세요.</p>
   <div class="tool-list">
-    <div class="tool-row">
-      <span class="tool-badge badge-easy">쉬움</span>
-      <div>
-        <p>ChatGPT / Gemini / Claude</p>
-        <span>채팅으로 요청 → 코드 복사 → 파일 저장. 코딩 지식 불필요.</span>
-      </div>
-    </div>
-    <div class="tool-row">
-      <span class="tool-badge badge-mid">중간</span>
-      <div>
-        <p>Claude Code / GitHub Copilot</p>
-        <span>말로 지시하면 파일 생성 + GitHub push까지 자동 처리.</span>
-      </div>
-    </div>
-    <div class="tool-row">
-      <span class="tool-badge badge-hard">심화</span>
-      <div>
-        <p>직접 코딩 (VS Code)</p>
-        <span>자유도 최고. HTML·CSS 학습 필요. 커스터마이징 한계 없음.</span>
-      </div>
-    </div>
+    <div class="tool-row"><span class="tool-badge badge-easy">쉬움</span><div><p>ChatGPT / Gemini / Claude</p><span>채팅으로 요청 → 코드 복사 → 파일 저장. 코딩 지식 불필요.</span></div></div>
+    <div class="tool-row"><span class="tool-badge badge-mid">중간</span><div><p>Claude Code / Google Antigravity / OpenAI Codex</p><span>말로 지시하면 파일 생성 + GitHub push까지 자동 처리.</span></div></div>
+    <div class="tool-row"><span class="tool-badge badge-hard">심화</span><div><p>직접 코딩 (VS Code)</p><span>자유도 최고. HTML·CSS 학습 필요. 커스터마이징 한계 없음.</span></div></div>
   </div>
 </div>
 
