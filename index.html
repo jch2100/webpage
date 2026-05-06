@@ -29,7 +29,6 @@
       line-height: 1.5;
     }
 
-    /* ── 헤더 ── */
     header {
       border-bottom: 1px solid #ebebeb;
       padding: 20px 24px;
@@ -51,7 +50,6 @@
       letter-spacing: -0.18px;
     }
 
-    /* ── 히어로 ── */
     .hero {
       max-width: 720px;
       margin: 0 auto;
@@ -86,7 +84,6 @@
       font-weight: 500;
     }
 
-    /* ── 섹션 ── */
     .section {
       max-width: 720px;
       margin: 0 auto;
@@ -105,7 +102,6 @@
       font-weight: 500;
     }
 
-    /* ── 3단계 요약 카드 ── */
     .steps-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -143,17 +139,13 @@
       line-height: 1.5;
     }
 
-    /* ── 구분선 ── */
     .divider {
       border: none;
       border-top: 1px solid #ebebeb;
-      margin: 0 24px 56px;
+      margin: 0 auto 56px;
       max-width: 720px;
-      margin-left: auto;
-      margin-right: auto;
     }
 
-    /* ── 상세 단계 ── */
     .detail-step {
       display: flex;
       gap: 20px;
@@ -183,7 +175,6 @@
       line-height: 1.6;
     }
 
-    /* ── 콜아웃 ── */
     .callout {
       background: #fff8f9;
       border: 1px solid #ffd0d8;
@@ -196,7 +187,6 @@
     }
     .callout strong { color: var(--red); font-weight: 600; }
 
-    /* ── 코드 블록 ── */
     .code-block {
       background: #f7f7f7;
       border: 1px solid #ebebeb;
@@ -207,10 +197,10 @@
       color: #3f3f3f;
       margin-top: 10px;
       overflow-x: auto;
+      white-space: pre;
     }
     .code-comment { color: #929292; }
 
-    /* ── 도구 비교 ── */
     .tool-list { margin-top: 10px; }
     .tool-row {
       display: flex;
@@ -235,16 +225,13 @@
     .tool-row div p { font-size: 14px; font-weight: 600; margin-bottom: 2px; }
     .tool-row div span { font-size: 13px; color: var(--secondary); }
 
-    /* ── CTA 버튼 ── */
     .cta-wrap {
       text-align: center;
       padding: 56px 24px;
       background: #fff8f9;
       border-radius: 32px;
-      margin: 0 24px 80px;
+      margin: 0 auto 80px;
       max-width: 720px;
-      margin-left: auto;
-      margin-right: auto;
     }
     .cta-wrap h2 {
       font-size: 22px;
@@ -270,7 +257,6 @@
     }
     .btn:hover { background: var(--red-dark); }
 
-    /* ── 푸터 ── */
     footer {
       border-top: 1px solid #ebebeb;
       padding: 24px;
@@ -288,7 +274,6 @@
 </head>
 <body>
 
-<!-- 헤더 -->
 <header>
   <div class="logo-dot">
     <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
@@ -296,18 +281,15 @@
   <span>웹페이지 만들기 가이드</span>
 </header>
 
-<!-- 히어로 -->
 <div class="hero">
   <div class="hero-badge">Beginner Guide</div>
   <h1>내 페이지를 인터넷에<br><span>올리는 법</span></h1>
   <p>코딩 경험 없어도 괜찮습니다. 세 단계로 내 웹페이지 주소를 만드세요.</p>
 </div>
 
-<!-- 3단계 요약 -->
 <div class="section">
   <p class="section-title">한눈에 보는 3단계</p>
   <p class="section-sub">결론부터 — 이 세 가지가 전부입니다.</p>
-
   <div class="steps-grid">
     <div class="step-card">
       <div class="step-num">1</div>
@@ -329,7 +311,6 @@
 
 <hr class="divider" />
 
-<!-- 개념 설명 -->
 <div class="section">
   <p class="section-title">알고 시작하면 쉬운 개념 둘</p>
   <p class="section-sub">이것만 이해하면 전체 흐름이 보입니다.</p>
@@ -367,7 +348,6 @@
 
 <hr class="divider" />
 
-<!-- 상세 가이드 -->
 <div class="section">
   <p class="section-title">단계별 따라하기</p>
   <p class="section-sub">순서대로 하면 처음이어도 배포까지 완료됩니다.</p>
@@ -435,11 +415,9 @@
 
 <hr class="divider" />
 
-<!-- HTML 만드는 도구 비교 -->
 <div class="section">
   <p class="section-title">HTML 만드는 방법 비교</p>
   <p class="section-sub">상황에 맞는 방법을 고르세요.</p>
-
   <div class="tool-list">
     <div class="tool-row">
       <span class="tool-badge badge-easy">쉬움</span>
@@ -465,14 +443,12 @@
   </div>
 </div>
 
-<!-- CTA -->
 <div class="cta-wrap">
   <h2>다음 단계: 내 도메인 연결하기</h2>
   <p>Gabia·Namecheap에서 도메인을 구입한 뒤 GitHub Pages Custom Domain에 연결하면<br>나만의 주소(<em>myblog.com</em>)를 쓸 수 있습니다.</p>
   <a class="btn" href="https://docs.github.com/ko/pages/configuring-a-custom-domain-for-your-github-pages-site" target="_blank">커스텀 도메인 설정 →</a>
 </div>
 
-<!-- 푸터 -->
 <footer>
   웹페이지 만들기 초보자 가이드 · 2025 &nbsp;|&nbsp; Airbnb Design System 적용
 </footer>
