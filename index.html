@@ -279,10 +279,115 @@
       color: var(--secondary);
     }
 
+    /* ── 준비물 2가지 ── */
+    .prereq-wrap {
+      background: #f7f7f7;
+      padding: 56px 24px;
+      margin-bottom: 0;
+    }
+    .prereq-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .prereq-badge {
+      display: inline-block;
+      background: var(--red);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 14px;
+      margin-bottom: 16px;
+    }
+    .prereq-title {
+      font-size: clamp(20px, 4vw, 26px);
+      font-weight: 700;
+      letter-spacing: -0.44px;
+      line-height: 1.25;
+      margin-bottom: 8px;
+    }
+    .prereq-sub {
+      font-size: 14px;
+      color: var(--secondary);
+      margin-bottom: 28px;
+      font-weight: 500;
+    }
+    .prereq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .prereq-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .prereq-num {
+      flex-shrink: 0;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--red);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .prereq-body h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      letter-spacing: -0.18px;
+    }
+    .prereq-body > p {
+      font-size: 13px;
+      color: var(--secondary);
+      margin-bottom: 14px;
+      line-height: 1.55;
+    }
+    .prereq-body a { color: var(--red); }
+
+    /* 에이전트 선택 목록 */
+    .agent-list { display: flex; flex-direction: column; gap: 10px; }
+    .agent-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+    }
+    .agent-tag {
+      flex-shrink: 0;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 14px;
+      margin-top: 1px;
+      white-space: nowrap;
+    }
+    .tag-gpt    { background: #e8f5e9; color: #2e7d32; }
+    .tag-claude { background: #fff3e0; color: #e65100; }
+    .tag-free   { background: #e3f2fd; color: #1565c0; }
+    .agent-row strong { display: block; font-weight: 600; color: var(--text); }
+    .agent-link {
+      display: inline-block;
+      font-size: 12px;
+      color: var(--red);
+      text-decoration: none;
+      margin-top: 1px;
+    }
+    .agent-link:hover { text-decoration: underline; }
+
     @media (max-width: 600px) {
       .hero { padding: 48px 20px 36px; }
       .steps-grid { grid-template-columns: 1fr; }
       .detail-step { flex-direction: column; gap: 8px; }
+      .prereq-grid { grid-template-columns: 1fr; }
+      .prereq-card { flex-direction: column; gap: 10px; }
     }
   </style>
 </head>
@@ -301,6 +406,60 @@
   <div class="hero-badge">Beginner Guide</div>
   <h1>내 페이지를 인터넷에<br><span>올리는 법</span></h1>
   <p>코딩 경험 없어도 괜찮습니다. 세 단계로 내 웹페이지 주소를 만드세요.</p>
+</div>
+
+<!-- 준비물 2가지 (입문자용) -->
+<div class="prereq-wrap">
+  <div class="prereq-inner">
+    <div class="prereq-badge">먼저 이것만 준비하세요</div>
+    <h2 class="prereq-title">3단계가 어렵게 느껴진다면?<br>딱 두 가지만 갖춰오면 됩니다</h2>
+    <p class="prereq-sub">아래 두 가지를 완료한 뒤 다시 이 가이드로 돌아오세요.</p>
+
+    <div class="prereq-grid">
+
+      <!-- 준비물 1 -->
+      <div class="prereq-card">
+        <div class="prereq-num">1</div>
+        <div class="prereq-body">
+          <h3>GitHub 계정 만들기</h3>
+          <p><a href="https://github.com" target="_blank">github.com</a>에 접속해서 회원가입(Sign up)을 완료하고 옵니다. 이메일 인증까지 끝내야 합니다.</p>
+        </div>
+      </div>
+
+      <!-- 준비물 2 -->
+      <div class="prereq-card">
+        <div class="prereq-num">2</div>
+        <div class="prereq-body">
+          <h3>코딩 에이전트 설치하기</h3>
+          <p>지금 쓰는 AI 서비스에 맞는 도구를 하나 골라 설치 + 로그인까지 완료하고 옵니다.</p>
+          <div class="agent-list">
+            <div class="agent-row">
+              <span class="agent-tag tag-gpt">ChatGPT 사용자</span>
+              <div>
+                <strong>OpenAI Codex</strong> 다운로드
+                <a class="agent-link" href="https://openai.com/codex" target="_blank">→ openai.com/codex</a>
+              </div>
+            </div>
+            <div class="agent-row">
+              <span class="agent-tag tag-claude">Claude 사용자</span>
+              <div>
+                <strong>Claude Code Desktop</strong> 다운로드
+                <a class="agent-link" href="https://claude.ai/download" target="_blank">→ claude.ai/download</a>
+              </div>
+            </div>
+            <div class="agent-row">
+              <span class="agent-tag tag-free">무료로 시작</span>
+              <div>
+                <strong>Google Antigravity</strong> 다운로드 (개인 무료)
+                <a class="agent-link" href="https://antigravity.google" target="_blank">→ antigravity.google</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /prereq-grid -->
+  </div>
 </div>
 
 <!-- 3단계 요약 -->
